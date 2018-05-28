@@ -1,3 +1,3 @@
-# testing weekly digest sandbox
+# testing
 
 just playing around don’t mind me
