@@ -1,9 +1,9 @@
-workflow "on pull request merge, delete the branch" {
+workflow "Set status on pull_request" {
   on = "pull_request"
-  resolves = ["jessfraz/branch-cleanup-action@master"]
+  resolves = ["Set status"]
 }
 
-action "jessfraz/branch-cleanup-action@master" {
-  uses = "jessfraz/branch-cleanup-action@master"
+action "Set status" {
+  uses = "wip/app@master"
   secrets = ["GITHUB_TOKEN"]
 }
