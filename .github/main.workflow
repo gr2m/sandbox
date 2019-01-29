@@ -4,6 +4,6 @@ workflow "Set status on pull_request" {
 }
 
 action "Set status" {
-  uses = "wip/app@initial-version"
+  uses = "wip/action@initial-version"
   secrets = ["GITHUB_TOKEN"]
 }
