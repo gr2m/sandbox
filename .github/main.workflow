@@ -6,6 +6,7 @@ workflow "Debug" {
 action "curl1" {
   uses = "actions/bin/curl@master"
   args = [
+    "-H\"Accept: application/vnd.github.machine-man-preview+json\"",
     "-H\"Authorization: token $GITHUB_TOKEN\"",
     "-i",
     "https://api.github.com/installation/repositories"
