@@ -1,0 +1,10 @@
+on: push
+jobs:
+  test:
+    name: Test
+  my_second_job:
+    steps:
+    - name: My first action
+      env:
+        GITHUB_FUNK: "wicked"
+      run: echo "GITHUB_FUNK: $GITHUB_FUNK"
