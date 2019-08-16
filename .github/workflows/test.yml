@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: My first action
-      env:
-        GITHUB_FUNK: "wicked"
-      run: echo "GITHUB_FUNK: $GITHUB_FUNK"
+      - name: My first action
+        env:
+          GITHUB_FUNK: "wicked"
+        run: 'echo "GITHUB_FUNK: $GITHUB_FUNK"'
