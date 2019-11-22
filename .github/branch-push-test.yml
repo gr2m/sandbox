@@ -1,0 +1,11 @@
+name: Branch push test
+on:
+  push:
+    branches:
+      - greenkeeper/prettier-*
+
+jobs:
+  update_prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo okay"
