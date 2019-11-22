@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - greenkeeper/prettier-*
+      - test
 
 jobs:
   update_prettier:
