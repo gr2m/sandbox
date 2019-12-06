@@ -5,8 +5,8 @@ on:
       - opened
       - edited
   schedule:
-    # https://crontab.guru/every-five-minutes
-    - cron: "*/5 * * * *"
+    # https://crontab.guru/every-minute
+    - cron: "* * * * *"
 
 jobs:
   merge_schedule:
