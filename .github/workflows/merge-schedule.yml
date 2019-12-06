@@ -1,25 +1,17 @@
 name: Merge Schedule
-
-on: 
+on:
   pull_request:
-    types: 
+    types:
       - opened
       - edited
+  schedule:
+    # https://crontab.guru/every-hour
+    - cron: 0 * * * *
 
 jobs:
-  set_status:
+  merge_schedule:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: octokit/request-action@v2.x
-        id: create_check_run
-        with:
-          route: POST /repos/:repository/check-runs
-          repository: ${{ github.repository }}
-          mediaType: '{"previews": ["antiope"]}'
-          name: "schedule"
-          head_sha: ${{ github.head_ref }}
-          status: in_progress
-          output: '{"title":"Test check run title","summary": "A summary of the test check run"}'
+      - uses: gr2m/merge-schedule-action@initial-version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
