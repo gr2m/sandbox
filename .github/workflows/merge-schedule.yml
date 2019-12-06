@@ -18,7 +18,7 @@ jobs:
           repository: ${{ github.repository }}
           mediaType: '{"previews": ["antiope"]}'
           name: "schedule"
-          head_sha: ${{ github.sha }}
+          head_sha: ${{ github.head_ref }}
           status: in_progress
           output: '{"title":"Test check run title","summary": "A summary of the test check run"}'
         env:
