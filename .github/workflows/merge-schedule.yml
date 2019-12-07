@@ -4,9 +4,9 @@ on:
     types:
       - opened
       - edited
-  schedule:
-    # https://crontab.guru/every-five-minutes
-    - cron: "*/5 * * * *"
+#   schedule:
+#     # https://crontab.guru/every-five-minutes
+#     - cron: "*/5 * * * *"
 
 jobs:
   merge_schedule:
