@@ -1,6 +1,5 @@
 name: PR Debug
 on: pull_request
-name: debug
 jobs:
   preview:
     name: Preview
