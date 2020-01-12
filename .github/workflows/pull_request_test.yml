@@ -1,5 +1,7 @@
 name: PR Debug
-on: pull_request
+on:
+ pull_request:
+   types: [opened, synchronize, reopened, edited]
 jobs:
   preview:
     name: Preview
