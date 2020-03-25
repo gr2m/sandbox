@@ -11,3 +11,5 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: node debug.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
