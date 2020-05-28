@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: "npm ci"
-      - run: "npm run build"
       # fetch statistics for @octokit org
       - uses: gr2m/org-stats-action@v1.x
         id: stats
