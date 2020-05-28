@@ -2,7 +2,7 @@ name: Update data/octokit-stats.csv
 on:
   schedule:
     # https://crontab.guru/every-5-minutes
-    - cron: */5 * * * *
+    - cron: "*/5 * * * *"
 jobs:
   updateOctokitStats:
     runs-on: ubuntu-latest
