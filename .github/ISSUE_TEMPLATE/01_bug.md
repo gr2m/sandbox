@@ -1,35 +1,40 @@
 ---
 name: "🐛 Bug Report"
-about: "If something isn't working as documented 🤔"
+about: "Please always create a discussion first."
 labels: bug
 ---
 
-<!-- Please replace all placeholders such as this below. -->
+<!-- 
+  STOP!
 
-**Checklist**
+  We ask you to create a new discussion first if you think you ran into a problem or want to suggest a change.
+  
+  Discussion already exists? Great, please move on :) replace all <!-- placeholders --\> below
+-->
 
-- [ ] I checked [all open bugs](https://github.com/octokit/rest.js/issues?q=is%3Aissue+label%3Abug) and none of them matched my problem.
+**Follow up**
 
-**Environment**
+This is a follow up to
 
-- [ ] https://api.github.com
-- [ ] GitHub Enterprise Server: <!-- please specify version(s) -->
-- [ ] GitHub Enterprise Cloud
-- [ ] Node.js
-- [ ] Browsers: <!-- please specify what browser/version -->
-- [ ] Others: <!-- please specify -->
+- <!-- add URLs to discussion(s) / issue(s) / pull request(s) -->
 
 **Versions**
 
-<!-- Please paste the output of  `npm ls | grep -v deduped | grep octokit` -->
+<!-- Paste the output of `npm ls | grep snowpack` or `yarn list --pattern snowpack`  -->
+
+**Environment**
+
+- [ ] npm: <!-- `npm --version` -->
+- [ ] yarn: <!-- `yarn --version` -->
+- [ ] operation system: 
 
 **What happened?**
 
-<!-- Describe the problem and how to reproduce it. Add screenshots or a link to your repository if possible and helpful -->
+<!-- Describe the problem -->
 
 **Minimal test case to reproduce the problem**
 
-<!-- Please include the steps to reproduce the issue. If you can, please create a reproducible test case on runkit.com. Example: https://runkit.com/gr2m/5aa034f1440b420012a6eebf -->
+<!-- Please include the steps to reproduce the issue. If you can, please create a repository that reproduces the problem -->
 
 **What did you expect to happen?**
 
