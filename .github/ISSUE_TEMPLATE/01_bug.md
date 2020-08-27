@@ -1,6 +1,6 @@
 ---
 name: "🐛 Bug Report"
-about: "Please always create a discussion first."
+about: Please always create a discussion first 👇
 labels: bug
 ---
 
