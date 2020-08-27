@@ -1,6 +1,6 @@
 ---
 name: "🧚‍♂️ Feature Request"
-about: "Wouldn’t it be nice if 💭"
+about: Please always create a discussion first.
 labels: feature
 ---
 
