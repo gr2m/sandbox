@@ -5,10 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo `date "+%b %d"` - `date -d "+5 days" "+%b %d"`
-      - run: echo $FUNK
-        env:
-          FUNK: "funky! ${{ 'fresh' }}"
-      - run: echo $FUNK
-        env:
-          FUNK: "Week of ${{ '`date \"+%b %d\"` - `date -d \"+5 days\" \"+%b %d\"`' }}"
-          
+      - id: monday
+        run: echo "::set-output name=datestring::`date \"+%b %d\"`"
+      - id: sunday
+        run: echo "::set-output name=datestring::`date -d \"+7 days\" \"+%b %d\"` '"
+      - uses: octokit/request-action@v2.x
+        run: echo "Week of ${{ steps.monday.outputs.datestring}} to ${{ steps.sunday.outputs.datestring}}",
