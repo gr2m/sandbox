@@ -1,5 +1,4 @@
-# Debugging https://github.com/octokit/rest.js/issues/1656
-name: PR Debug
+name: Debug
 on: workflow_dispatch
 jobs:
   debug:
