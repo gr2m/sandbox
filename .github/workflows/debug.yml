@@ -9,5 +9,4 @@ jobs:
         run: echo "::set-output name=datestring::`date \"+%b %d\"`"
       - id: sunday
         run: echo "::set-output name=datestring::`date -d \"+7 days\" \"+%b %d\"` '"
-      - uses: octokit/request-action@v2.x
-        run: echo "Week of ${{ steps.monday.outputs.datestring}} to ${{ steps.sunday.outputs.datestring}}",
+      - run: echo "Week of ${{ steps.monday.outputs.datestring}} to ${{ steps.sunday.outputs.datestring}}",
