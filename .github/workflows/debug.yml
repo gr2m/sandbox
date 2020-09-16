@@ -4,7 +4,7 @@ jobs:
   debug:
     runs-on: ubuntu-latest
     steps:
-      - run: echo `date "+%b %d"` - `date -d +5d "+%b %d"`
+      - run: echo `date "+%b %d"` - `date -d "+5 days" "+%b %d"`
       - run: echo $FUNK
         env:
           FUNK: funky
