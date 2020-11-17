@@ -1,0 +1,3 @@
+ template: .github/first-timers-template.md
+ labels:
+  - first-timers-test
