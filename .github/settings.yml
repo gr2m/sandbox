@@ -104,3 +104,5 @@ branches:
       required_linear_history: true
       restrictions:
         apps: []
+        teams: []
+        users: []
