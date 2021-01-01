@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "gr2m-test",
+      "name": "gr2m-test",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/30379250?v=4",
+      "profile": "https://github.com/gr2m-test",
+      "contributions": [
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "sandbox",
+  "projectOwner": "gr2m",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
