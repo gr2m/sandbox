@@ -20,7 +20,8 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/8260834?v=4",
       "profile": "http://maxcubing.wordpress.com",
       "contributions": [
-        "mentoring"
+        "mentoring",
+        "code"
       ]
     }
   ],
@@ -29,5 +30,6 @@
   "projectOwner": "gr2m",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "none"
 }
