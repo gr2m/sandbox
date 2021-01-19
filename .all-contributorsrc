@@ -20,7 +20,8 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/39992?v=4",
       "profile": "https://dev.to/gr2m",
       "contributions": [
-        "test"
+        "test",
+        "infra"
       ]
     }
   ],
@@ -29,5 +30,6 @@
   "projectOwner": "gr2m",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "none"
 }
