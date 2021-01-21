@@ -20,5 +20,9 @@
   "dependencies": {
     "@octokit/action": "^2.0.2"
   },
-  "renovate": {}
+  "renovate": {
+    "extends": [
+      "github>octokit/.github"
+    ]
+  }
 }
