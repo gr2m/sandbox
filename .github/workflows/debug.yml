@@ -13,5 +13,8 @@ jobs:
     steps:
       # set MY_ENV environment variable
       # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-environment-variable
-      - run: echo "MY_ENV=${{ join([github.event.sender.login, github.event.inputs.foo], '')}}" >> $GITHUB_ENV
+      - run: echo "MY_ENV=${{ github.event.sender.login }}" >> $GITHUB_ENV
+        if: github.event.sender.login
+      - run: echo "MY_ENV=${{ github.event.inputs.foo }}" >> $GITHUB_ENV
+        if: github.event.inputs.foo
       - run: 'echo "MY_ENV: $MY_ENV"'
