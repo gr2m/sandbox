@@ -19,5 +19,6 @@
   "homepage": "https://github.com/gr2m/sandbox#readme",
   "dependencies": {
     "@octokit/action": "^2.0.2"
-  }
+  },
+  "renovate": {}
 }
