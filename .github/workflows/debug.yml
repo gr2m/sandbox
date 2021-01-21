@@ -1,9 +1,17 @@
 name: Debug
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      foo:
+        description: "When I say foo, you say bar! Foo"
+        required: true
+        default: "bar"
+  push: {}
 jobs:
   debug:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      # set MY_ENV environment variable
+      # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-environment-variable
+      - echo "MY_ENV=${{ join([github.event.sender.login, github.event.inputs.foo], '')}}" >> $GITHUB_ENV
+      - echo "MY_ENV: $MY_ENV"
