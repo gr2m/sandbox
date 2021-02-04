@@ -4,7 +4,7 @@ name: Schedule Debug
 on:
   schedule:
     # https://crontab.guru/every-five-minutes
-    - cron: */5 * * * *
+    - cron: "*/5 * * * *"
 
 jobs:
   debug:
