@@ -6,17 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gr2m/sandbox.git"
-  },
+  "repository": "github:gr2m/sandbox",
   "keywords": [],
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gr2m/sandbox/issues"
-  },
-  "homepage": "https://github.com/gr2m/sandbox#readme",
   "dependencies": {
     "@octokit/action": "^2.0.2"
   },
