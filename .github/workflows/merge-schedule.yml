@@ -18,5 +18,6 @@ jobs:
       - uses: gr2m/merge-schedule-action@v1
         with:
           merge_method: squash
+          time_zone: "America/Los_Angeles"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
