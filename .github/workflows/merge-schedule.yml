@@ -7,7 +7,7 @@ on:
       - synchronize
   schedule:
     # https://crontab.guru/every-five-minutes
-    - cron: */5 * * * *
+    - cron: "*/5 * * * *"
   # manual trigger for testing
   workflow_dispatch: {}
 
