@@ -1,0 +1,23 @@
+name: Merge Schedule
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+  schedule:
+    # https://crontab.guru/every-five-minutes
+    - cron: */5 * * * *
+  # manual trigger for testing
+  workflow_dispatch: {}
+
+jobs:
+  merge_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: "npm ci"
+      - run: "npm run build"
+      - uses: gr2m/merge-schedule-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
