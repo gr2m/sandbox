@@ -1,0 +1,11 @@
+on:
+  schedule:
+    - cron: "40 22 * * *"
+name: Test
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: node -e 'console.log(JSON.stringify(process.env.GITHUB_EVENT_PATH, null, 2)'
