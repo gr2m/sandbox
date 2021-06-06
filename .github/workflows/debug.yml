@@ -5,6 +5,21 @@ jobs:
   cowsay:
     runs-on: ubuntu-latest
     steps:
-      - uses: gr2m/cowsay-action@v1.x
+      - uses: actions/github-script@v4
         with:
-          text: "Hello"
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const { data } = await github.repos.getContent({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: ".github/workflows/debug.yml"
+            })
+            await github.repos.createOrUpdateFileContents({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: ".github/workflows/debug.yml",
+              sha: data.sha,
+              content: Buffer.from(`# ${Date.now()}\n${Buffer.from(data.content, "base64").toString()}`).toString('base64')
+            })
+            console.log("workflow file updated")
+            
