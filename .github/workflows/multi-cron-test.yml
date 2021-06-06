@@ -1,0 +1,13 @@
+name: Multi cron test
+on:
+  schedule:
+    - cron: "0 * * * *"
+    - cron: "15 * * * *"
+    - cron: "30 * * * *"
+    - cron: "45 * * * *"
+
+jobs:
+  doh:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo DOH
