@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/github-script@v4
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.GR2M_PAT_WITH_WORKFLOW_SCOPE}}
           script: |
             const { data } = await github.repos.getContent({
               owner: context.repo.owner,
