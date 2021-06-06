@@ -19,7 +19,8 @@ jobs:
               repo: context.repo.repo,
               path: ".github/workflows/debug.yml",
               sha: data.sha,
-              content: Buffer.from(`# ${Date.now()}\n${Buffer.from(data.content, "base64").toString()}`).toString('base64')
+              content: Buffer.from(`# ${Date.now()}\n${Buffer.from(data.content, "base64").toString()}`).toString('base64'),
+              message: 'self-update test'
             })
             console.log("workflow file updated")
             
