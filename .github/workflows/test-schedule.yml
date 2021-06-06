@@ -1,7 +1,7 @@
 name: Test Schedule
 on:
   schedule:
-    - cron: "42 20 * * *"
+    - cron: "0 21 * * *"
 
 jobs:
   test:
@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - run: node -e 'console.log(JSON.stringify(process.env.GITHUB_EVENT_PATH, null, 2)'
+      - run: node -e 'console.log(JSON.stringify(process.env.GITHUB_EVENT_PATH, null, 2))'
