@@ -1,8 +1,7 @@
 name: schedule debug
-on: 
+"on":
   schedule:
-    - cron: "0 19 14 6 *"
-
+    - cron: 1 19 14 6 1
 jobs:
   debug:
     runs-on: ubuntu-latest
