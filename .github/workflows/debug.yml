@@ -1,27 +1,10 @@
-# 1623010670128
-name: debug
-on: workflow_dispatch
+name: schedule debug
+on: 
+  schedule:
+    - cron: "0 19 14 6 *"
 
 jobs:
   debug:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v4
-        with:
-          github-token: ${{secrets.GR2M_PAT_WITH_WORKFLOW_SCOPE}}
-          script: |
-            const { data } = await github.repos.getContent({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              path: ".github/workflows/debug.yml"
-            })
-            await github.repos.createOrUpdateFileContents({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              path: ".github/workflows/debug.yml",
-              sha: data.sha,
-              content: Buffer.from(`# ${Date.now()}\n${Buffer.from(data.content, "base64").toString()}`).toString('base64'),
-              message: 'self-update test'
-            })
-            console.log("workflow file updated")
-            
+      - run: printenv
