@@ -1,4 +1,5 @@
-name: schedule debugon
+name: schedule debug
+"on":
   schedule:
     - cron: 1 19 14 6 *
 jobs:
