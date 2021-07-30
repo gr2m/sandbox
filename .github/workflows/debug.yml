@@ -1,4 +1,4 @@
-name: schedule debug
+name: Debug
 on:
   workflow_dispatch: {}
 jobs:
