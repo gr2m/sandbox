@@ -1,0 +1,11 @@
+name: "Push Test"
+on:
+  push:
+    branches:
+      - push-test
+      
+jobs:
+  update_prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - run: cat $GITHUB_EVENT_PATH
