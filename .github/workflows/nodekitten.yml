@@ -1,10 +1,10 @@
 name: Update
-on:
+"on":
   repository_dispatch:
-    types: [nodekitten]
-
+    types:
+      - nodekitten
 jobs:
   nodekitten:
     runs-on: ubuntu-latest
     steps:
-      - run: "echo \"${{ toJSON(github.event.client_payload) }}\""
+      - run: echo "${{ toJSON(github.event.client_payload) }}"
