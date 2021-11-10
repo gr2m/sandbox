@@ -65,6 +65,8 @@ labels:
   - name: pull request welcome
     # include the old name to rename an existing label
     oldname: Help Wanted
+    
+  - name: new-label
 
 # Milestones: define milestones for Issues and Pull Requests
 milestones:
