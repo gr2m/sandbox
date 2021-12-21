@@ -9,3 +9,9 @@ jobs:
         run: echo "This should run."
       - if: ${{ !('1' > 0) }}
         run: echo "This should not run." && exit 1
+      - id: set
+        run: echo "::set-output name=number::123"
+      - if: ${{ steps.set.outputs.number > 0 }}
+        run: echo "This should run."
+      - if: ${{ !(steps.set.outputs.number > 0) }}
+        run: echo "This should not run." && exit 1
