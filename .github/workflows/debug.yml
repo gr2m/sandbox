@@ -1,9 +1,11 @@
 name: Debug
 "on":
-  issues: {}
+  workflow_dispatch: {}
 jobs:
   debug:
     runs-on: ubuntu-latest
     steps:
-      - run: cat $GITHUB_EVENT_PATH
-
+      - if: '"1" > 0'
+        run: echo "This should run."
+      - if: '!("1" > 0)'
+        run: echo "This should not run." && exit 1
