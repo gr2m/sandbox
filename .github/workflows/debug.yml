@@ -9,7 +9,7 @@ jobs:
         id: get_file
         with:
           route: GET /repos/{repository}/contents/{path}
-          repository: ${{ env.GITHUB_REPOSITORY }}
+          repository: ${{ github.repository }}
           path: .github/wip.yml
           mediaType: |
             format: raw
