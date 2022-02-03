@@ -5,13 +5,14 @@ jobs:
   debug:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ '1' > 0 }}
-        run: echo "This should run."
-      - if: ${{ !('1' > 0) }}
-        run: echo "This should not run." && exit 1
-      - id: set
-        run: echo "::set-output name=number::123"
-      - if: ${{ steps.set.outputs.number > 0 }}
-        run: echo "This should run."
-      - if: ${{ !(steps.set.outputs.number > 0) }}
-        run: echo "This should not run." && exit 1
+      - uses: octokit/request-action@v2.x
+        id: get_file
+        with:
+          route: GET /repos/{repository}/contents/{path}
+          repository: ${{ env.GITHUB_REPOSITORY }}
+          path: .github/wip.yml
+          mediaType: |
+            format: raw
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "echo latest release: ${{ steps.get_file.outputs.data }}"
