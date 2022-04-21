@@ -1,6 +1,7 @@
 name: Debug
 "on":
   repository_dispatch: {}
+  workflow_dispatch: {}
 jobs:
   debug:
     runs-on: ubuntu-latest
