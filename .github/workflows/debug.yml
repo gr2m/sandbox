@@ -6,5 +6,5 @@ jobs:
   debug:
     runs-on: ubuntu-latest
     steps:
-      # some comment here to test https://github.com/oscard0m/octoherd-script-update-action-version-in-workflows
-      - uses: actions/checkout@v3
+      # this is not a real token don't you worry
+      - run: echo ghp_eWcO7MRlWREC2rQjiEYH5FBiMUx2Tc2JxgZ3
