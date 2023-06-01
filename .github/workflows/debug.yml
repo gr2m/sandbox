@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # this is not a real token don't you worry
-      - run: echo ghp_eWcO7MRlWREC2rQjiEYH5FBiMUx2Tc2JxgZ3
+      - uses: gr2m/hello-world-js-action@v1.x
