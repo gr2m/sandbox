@@ -4,8 +4,11 @@ name: Debug
 jobs:
   set-matrix:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{steps.set.outputs.matrix }}
     steps:
-      - run: |
+      - id: set
+        run: |
           {
             echo 'MULTI_LINE_JSON<<EOF'
             echo "matrix=$MATRIX"
