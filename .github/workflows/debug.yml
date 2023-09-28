@@ -5,7 +5,12 @@ jobs:
   set-matrix:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+      - run: |
+          {
+            echo 'EMPTY_ISSUES<<EOF'
+            echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+            echo 'EOF'
+          } >>"$GITHUB_ENV"
     env:
       MATRIX: |
         [
