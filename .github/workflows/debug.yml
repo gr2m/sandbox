@@ -8,23 +8,7 @@ jobs:
       matrix: ${{steps.set.outputs.matrix }}
     steps:
       - id: set
-        run: |
-          {
-            echo 'MULTI_LINE_JSON<<EOF'
-            echo "matrix=$MATRIX"
-            echo 'EOF'
-          } >>"$GITHUB_OUTPUT"
-    env:
-      MATRIX: '[{"owner":"gr2m"},{"owner":"gr2m-sandbox","repos":["test"]}]'
-      # [
-      #   {
-      #     "owner": "gr2m"
-      #   },
-      #   {
-      #     "owner": "gr2m-sandbox",
-      #     "repos": ["test"]
-      #   }
-      # ]
+        run: echo 'matrix=[{"owner":"gr2m"},{"owner":"gr2m-sandbox","repos":["test"]}]' >>"$GITHUB_OUTPUT"
 
   use-matrix:
     needs: [set-matrix]
@@ -32,7 +16,6 @@ jobs:
     strategy:
       matrix:
         ownersAndRepos: ${{ fromJson(needs.set-matrix.outputs.matrix) }}
-      
+
     steps:
       - run: echo ${{ toJSON(matrix.ownersAndRepos) }}
-    
