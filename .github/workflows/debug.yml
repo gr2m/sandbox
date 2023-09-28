@@ -1,10 +1,30 @@
 name: Debug
 "on":
-  repository_dispatch: {}
   workflow_dispatch: {}
 jobs:
-  debug:
+  set-matrix:
     runs-on: ubuntu-latest
     steps:
-      # this is not a real token don't you worry
-      - uses: gr2m/hello-world-js-action@v1.x
+      - run: echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+    env:
+      MATRIX: |
+        [
+          {
+            "owner": "gr2m"
+          },
+          {
+            "owner": "gr2m-sandbox",
+            "repos": ["test"]
+          }
+        ]
+
+  use-matrix:
+    needs: [set-matrix]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ownersAndRepos: ${{ fromJson(set-matrix.outputs.matrix) }}
+      
+    steps:
+      - run: echo ${{ toJSON(ownersAndRepos) }}
+    
