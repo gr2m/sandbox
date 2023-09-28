@@ -18,4 +18,5 @@ jobs:
         ownersAndRepos: ${{ fromJson(needs.set-matrix.outputs.matrix) }}
 
     steps:
-      - run: echo ${{ toJSON(matrix.ownersAndRepos) }}
+      - run: echo owner - ${{ matrix.ownersAndRepos.owner }}
+      - run: echo repos - ${{ toJSON(matrix.ownersAndRepos.repos) }}
