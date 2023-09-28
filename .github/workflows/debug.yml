@@ -19,4 +19,4 @@ jobs:
 
     steps:
       - run: echo owner - ${{ matrix.ownersAndRepos.owner }}
-      - run: echo repos - ${{ toJSON(matrix.ownersAndRepos.repos) }}
+      - run: echo repos - ${{ join(matrix.ownersAndRepos.repos) }}
