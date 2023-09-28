@@ -7,21 +7,21 @@ jobs:
     steps:
       - run: |
           {
-            echo 'EMPTY_ISSUES<<EOF'
-            echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+            echo 'MULTI_LINE_JSON<<EOF'
+            echo "matrix=$MATRIX"
             echo 'EOF'
-          } >>"$GITHUB_ENV"
+          } >>"$GITHUB_OUTPUT"
     env:
-      MATRIX: |
-        [
-          {
-            "owner": "gr2m"
-          },
-          {
-            "owner": "gr2m-sandbox",
-            "repos": ["test"]
-          }
-        ]
+      MATRIX: '[{"owner":"gr2m"},{"owner":"gr2m-sandbox","repos":["test"]}]'
+      # [
+      #   {
+      #     "owner": "gr2m"
+      #   },
+      #   {
+      #     "owner": "gr2m-sandbox",
+      #     "repos": ["test"]
+      #   }
+      # ]
 
   use-matrix:
     needs: [set-matrix]
