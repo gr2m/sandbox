@@ -20,3 +20,16 @@ jobs:
     steps:
       - run: echo owner - ${{ matrix.ownersAndRepos.owner }}
       - run: echo repos - ${{ join(matrix.ownersAndRepos.repos) }}
+      - uses: timreimherr/create-github-app-token@main
+        id: app-token
+        with:
+          app_id: ${{ vars.GR2M_GITHUB_APP_ID }}
+          private_key: ${{ secrets.GR2M_GITHUB_APP_PRIVATE_KEY }}
+          owner: ${{ matrix.ownersAndRepos.owner }}
+      - uses: octokit/request-action@v2.x
+        id: get-installation-repositories
+        with:
+          route: GET /installation/repositories
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+      - run: "echo '${{ steps.get-installation-repositories.outputs.data }}'"
