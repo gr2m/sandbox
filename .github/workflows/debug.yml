@@ -8,7 +8,7 @@ jobs:
       matrix: ${{steps.set.outputs.matrix }}
     steps:
       - id: set
-        run: echo 'matrix=[{"owner":"gr2m"},{"owner":"gr2m-sandbox","repos":["test"]}]' >>"$GITHUB_OUTPUT"
+        run: echo 'matrix=[{"owner":"gr2m"},{"owner":"gr2m-sandbox","repos":["test12"]}]' >>"$GITHUB_OUTPUT"
 
   use-matrix:
     name: '@${{ matrix.ownersAndRepos.owner }} installation'
@@ -27,6 +27,7 @@ jobs:
           app_id: ${{ vars.GR2M_GITHUB_APP_ID }}
           private_key: ${{ secrets.GR2M_GITHUB_APP_PRIVATE_KEY }}
           owner: ${{ matrix.ownersAndRepos.owner }}
+          repositories: ${{ join(matrix.ownersAndRepos.repos) }}
       - uses: octokit/request-action@v2.x
         id: get-installation-repositories
         with:
