@@ -33,4 +33,6 @@ jobs:
           route: GET /installation/repositories
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-      - run: echo "${{ steps.get-installation-repositories.outputs.data }}"
+      - run: echo $DATA
+        env:
+          DATA: ${{ steps.get-installation-repositories.outputs.data }}
