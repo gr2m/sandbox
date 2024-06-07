@@ -21,7 +21,7 @@ jobs:
     steps:
       - run: echo owner - ${{ matrix.ownersAndRepos.owner }}
       - run: echo repos - ${{ join(matrix.ownersAndRepos.repos) }}
-      - uses: gr2m/create-github-app-token@main
+      - uses: actions/create-github-app-token@main
         id: app-auth
         with:
           app_id: ${{ vars.GR2M_GITHUB_APP_ID }}
