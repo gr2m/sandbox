@@ -22,18 +22,10 @@ jobs:
       - run: echo owner - ${{ matrix.ownersAndRepos.owner }}
       - run: echo repos - ${{ join(matrix.ownersAndRepos.repos) }}
       - uses: gr2m/create-github-app-token@main
-        id: app-token
+        id: app-auth
         with:
           app_id: ${{ vars.GR2M_GITHUB_APP_ID }}
           private_key: ${{ secrets.GR2M_GITHUB_APP_PRIVATE_KEY }}
           owner: ${{ matrix.ownersAndRepos.owner }}
           repositories: ${{ join(matrix.ownersAndRepos.repos) }}
-      - uses: octokit/request-action@v2.x
-        id: get-installation-repositories
-        with:
-          route: GET /installation/repositories
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-      - run: echo $DATA
-        env:
-          DATA: ${{ steps.get-installation-repositories.outputs.data }}
+      - run: echo "${{steps.app-auth.outputs.app-slug}}[bot] <${{ steps.app-auth.outputs.installation-id }}+${{ steps.app-auth.outputs.app-slug }}[bot]@users.noreply.github.com"
