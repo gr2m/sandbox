@@ -2,30 +2,13 @@ name: Debug
 "on":
   workflow_dispatch: {}
 jobs:
-  set-matrix:
+  debug:
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{steps.set.outputs.matrix }}
-    steps:
-      - id: set
-        run: echo 'matrix=[{"owner":"gr2m"},{"owner":"gr2m-sandbox","repos":["test12"]}]' >>"$GITHUB_OUTPUT"
-
-  use-matrix:
-    name: '@${{ matrix.ownersAndRepos.owner }} installation'
-    needs: [set-matrix]
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ownersAndRepos: ${{ fromJson(needs.set-matrix.outputs.matrix) }}
 
     steps:
-      - run: echo owner - ${{ matrix.ownersAndRepos.owner }}
-      - run: echo repos - ${{ join(matrix.ownersAndRepos.repos) }}
       - uses: actions/create-github-app-token@main
         id: app-auth
         with:
-          app_id: ${{ vars.GR2M_GITHUB_APP_ID }}
-          private_key: ${{ secrets.GR2M_GITHUB_APP_PRIVATE_KEY }}
-          owner: ${{ matrix.ownersAndRepos.owner }}
-          repositories: ${{ join(matrix.ownersAndRepos.repos) }}
+          app-id: ${{ vars.GR2M_GITHUB_APP_ID }}
+          private-key: ${{ secrets.GR2M_GITHUB_APP_PRIVATE_KEY }}
       - run: echo "${{steps.app-auth.outputs.app-slug}}[bot] <${{ steps.app-auth.outputs.installation-id }}+${{ steps.app-auth.outputs.app-slug }}[bot]@users.noreply.github.com"
