@@ -1,0 +1,12 @@
+name: Test required CI check with path filter
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - "test/**"
+
+jobs:
+  required-check-with-path-filter:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
