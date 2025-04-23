@@ -1,5 +1,5 @@
 ---
-"my-other-test": patch
+"my-other-test": minor
 ---
 
 something here
