@@ -1,9 +1,6 @@
 on:
   issues:
-    types: [opened]
-
-permissions:
-  issues: write
+    types: [opened, reopened]
 
 jobs:
   generate-text:
