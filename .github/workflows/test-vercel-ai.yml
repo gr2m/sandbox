@@ -1,6 +1,6 @@
 on:
   issues:
-    types: [opened, reopen]
+    types: [opened, reopened]
 
 jobs:
   generate-text:
