@@ -21,6 +21,6 @@ jobs:
 
             Issue Body: ${{ github.event.issue.body }}
       - if: steps.prompt.outputs.text == 'yes'
-        run: gh issue edit ${{ github.event.issue.number }} --add-label urgent
+        run: gh issue edit ${{ github.event.issue.html_url }} --add-label urgent
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
