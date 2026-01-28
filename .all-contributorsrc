@@ -13,6 +13,15 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "gr2m-test-test",
+      "name": "gr2m-test-test",
+      "avatar_url": "https://avatars.githubusercontent.com/u/133448358?v=4",
+      "profile": "https://github.com/gr2m-test-test",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -20,5 +29,6 @@
   "projectOwner": "gr2m",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
