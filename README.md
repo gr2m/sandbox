@@ -1,7 +1,7 @@
 # Sandbox
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Check 1, 2, 3, 4
@@ -14,9 +14,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://github.com/gr2m-test"><img src="https://avatars3.githubusercontent.com/u/30379250?v=4?s=100" width="100px;" alt=""/><br /><sub><b>gr2m-test</b></sub></a><br /><a href="#infra-gr2m-test" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/gr2m-test"><img src="https://avatars3.githubusercontent.com/u/30379250?v=4?s=100" width="100px;" alt="gr2m-test"/><br /><sub><b>gr2m-test</b></sub></a><br /><a href="#infra-gr2m-test" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://dev.to/gr2m"><img src="https://avatars.githubusercontent.com/u/39992?v=4?s=100" width="100px;" alt="Gregor Martynus"/><br /><sub><b>Gregor Martynus</b></sub></a><br /><a href="https://github.com/gr2m/sandbox/commits?author=gr2m" title="Tests">⚠️</a> <a href="#eventOrganizing-gr2m" title="Event Organizing">📋</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
